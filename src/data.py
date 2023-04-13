@@ -12,6 +12,10 @@ from torchvision.datasets.cityscapes import Cityscapes
 from torchvision.transforms.functional import to_pil_image
 from tqdm import tqdm
 
+##
+from google.colab import drive
+##
+
 
 def bit_get(val, idx):
     """Gets the bit value.
@@ -83,7 +87,16 @@ class DirectoryDataset(Dataset):
         self.transform = transform
         self.target_transform = target_transform
 
+        ##
+        drive.mount('/content/gdrive')
+        ##
+        
         self.img_files = np.array(sorted(os.listdir(self.img_dir)))
+        
+        ##
+        drive.flush_and_unmount()
+        ##
+        
         assert len(self.img_files) > 0
         if os.path.exists(join(self.dir, "labels")):
             self.label_files = np.array(sorted(os.listdir(self.label_dir)))

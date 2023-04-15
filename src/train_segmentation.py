@@ -46,12 +46,14 @@ def get_class_labels(dataset_name):
             'roads and cars',
             'buildings and clutter',
             'trees and vegetation']
+    '''
     elif dataset_name == "directory":
         return [
             'background',
             'particle1',
             'particle2',
             'particle3']
+    '''
     else:
         raise ValueError("Unknown Dataset {}".format(dataset_name))
 

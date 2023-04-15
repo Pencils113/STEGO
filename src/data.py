@@ -523,6 +523,8 @@ class ContrastiveSegDataset(Dataset):
         pack = self.dataset[ind]
 
         if self.pos_images or self.pos_labels:
+            print(ind)
+            print(torch.randint(low=1, high=self.num_neighbors + 1, size=[]).item())
             ind_pos = self.nns[ind][torch.randint(low=1, high=self.num_neighbors + 1, size=[]).item()]
             pack_pos = self.dataset[ind_pos]
 

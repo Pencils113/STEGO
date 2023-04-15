@@ -494,7 +494,8 @@ def my_app(cfg: DictConfig) -> None:
                 dirpath=join(checkpoint_dir, name),
                 #every_n_train_steps=400,
                 every_n_train_steps=10,
-                save_top_k=2,
+                #save_top_k=2,
+                save_top_k=3,
                 monitor="test/cluster/mIoU",
                 mode="max",
             )

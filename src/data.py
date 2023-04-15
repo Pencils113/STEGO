@@ -428,7 +428,7 @@ class ContrastiveSegDataset(Dataset):
                  cfg,
                  aug_geometric_transform=None,
                  aug_photometric_transform=None,
-                 num_neighbors=2,
+                 num_neighbors=1,
                  #num_neighbors=5,
                  compute_knns=False,
                  mask=False,

@@ -528,6 +528,7 @@ class ContrastiveSegDataset(Dataset):
                 pack_pos = self.dataset[ind_pos]
             except:
                 print("Index error :(")
+                return
 
         seed = np.random.randint(2147483647)  # make a seed with numpy generator
 

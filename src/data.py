@@ -523,8 +523,10 @@ class ContrastiveSegDataset(Dataset):
         pack = self.dataset[ind]
 
         if self.pos_images or self.pos_labels:
-            ind_pos = self.nns[ind][torch.randint(low=1, high=self.num_neighbors + 1, size=[]).item()]
-            print(ind_pos)
+            error_check = torch.randint(low=1, high=self.num_neighbors + 1, size=[]).item()
+            print(error_check)
+            print(f"ind {ind}")
+            ind_pos = self.nns[ind][error_check]
             pack_pos = self.dataset[ind_pos]
 
         seed = np.random.randint(2147483647)  # make a seed with numpy generator

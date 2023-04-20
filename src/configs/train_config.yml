@@ -5,6 +5,9 @@ log_dir: "cocostuff27"
 azureml_logging: True
 submitting_to_aml: False
 
+# used in precopute_knns (~line 92)
+top_k_val: 5
+
 # Loader params
 num_workers: 24
 max_steps: 5000
